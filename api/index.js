@@ -1,12 +1,11 @@
 module.exports = (req, res) => {
-  const secretKey = "ZeIoNhUb888";
+  const secretKey = "nnn"; // ต้องแก้ตรงนี้เป็น nnn
 
-  // เช็คว่ามี Token ส่งมาไหม และตรงกับรหัสลับหรือไม่
   if (req.headers['x-auth-token'] === secretKey) {
     res.setHeader('Content-Type', 'text/plain');
-    res.status(200).send('print("ZeIoNhUb Connected!") game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 100');
+    res.status(200).send('print("รหัสใหม่ nnn ใช้งานได้แล้ว!")'); 
   } else {
-    // หน้า 404 บรรทัดเดียวที่คุณต้องการ
     res.status(404).send('404: Not Found');
   }
 };
+Not
