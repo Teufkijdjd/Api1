@@ -7,6 +7,6 @@ module.exports = (req, res) => {
     res.status(200).send('print("ZeIoNhUb Connected!") game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 100');
   } else {
     // หน้า 404 บรรทัดเดียวที่คุณต้องการ
-    res.status(404).send('404 Not Found');
+    res.status(404).send('404: Not Found');
   }
 };
