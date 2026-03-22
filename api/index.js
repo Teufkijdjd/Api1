@@ -13,7 +13,7 @@ print("ZeIoNhUb: รหัสถูกต้อง!")
 loadstring(game:HttpGet("https://pastebin.com/raw/g9trxTQs"))()
       `);
     } else {
-      res.status(403).send('Forbidden');
+      res.status(403).send('404: Not Found');
     }
   } catch (err) {
     res.status(500).send('Error: ' + err.message);
