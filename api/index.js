@@ -1,15 +1,19 @@
-module.exports = (req, res) => {
+module.exports = async (req, res) => {
   try {
     const secretKey = "nnn";
 
-    if (req.headers['x-auth-token'] === secretKey) {
+    // กัน undefined + lowercase header
+    const token = req.headers['x-auth-token'];
+
+    if (token && token === secretKey) {
       res.setHeader('Content-Type', 'text/plain');
+
       res.status(200).send(`
-print("ZeIoNhUb: รหัส nnn ถูกต้อง!")
+print("ZeIoNhUb: รหัสถูกต้อง!")
 loadstring(game:HttpGet("https://pastebin.com/raw/g9trxTQs"))()
       `);
     } else {
-      res.status(404).send('404: Not Found');
+      res.status(403).send('Forbidden');
     }
   } catch (err) {
     res.status(500).send('Error: ' + err.message);
